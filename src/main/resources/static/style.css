@@ -1,0 +1,545 @@
+:root {
+  --bg: #eef1ff;
+  --card: #ffffff;
+  --surface: #f3f6ff;
+  --text: #12164d;
+  --muted: #5f6491;
+  --accent: #4e50ff;
+  --accent-soft: rgba(78, 80, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top, rgba(168, 172, 255, 0.4), transparent 35%),
+              linear-gradient(180deg, #eef1ff 0%, #e8ebff 100%);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a { text-decoration: none; }
+
+button, input, select, textarea { font-family: inherit; }
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+.login-logo-center {
+  margin-bottom: 1.5rem;
+}
+
+.login-logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.login-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 0.3rem;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.login-subtitle {
+  font-size: 1rem;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  font-weight: 500;
+}
+
+.login-heading {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+}
+
+.login-card {
+  background: rgba(17, 26, 87, 0.98);
+  border-radius: 28px;
+  box-shadow: 0 30px 80px rgba(27, 34, 97, 0.22);
+  padding: 2rem;
+  color: white;
+}
+
+/* New wrapper to allow logo overlap */
+.login-card-wrapper {
+  position: relative;
+  margin: 1.2rem 0 0.8rem;
+}
+
+.login-logo-overlap {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 10px 30px rgba(15, 23, 64, 0.3);
+}
+
+/* Make room inside the card for the overlapping logo */
+.login-card {
+  padding-top: 3.2rem;
+}
+
+.login-card .form-label {
+  color: #e6e8ff;
+  font-weight: 600;
+  text-align: left;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.login-card .form-control {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f7f8ff;
+  min-height: 50px;
+}
+
+.login-card .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(78, 80, 255, 0.24);
+}
+
+.login-card .btn {
+  border-radius: 14px;
+  padding: 0.85rem 1.1rem;
+  box-shadow: 0 12px 24px rgba(60, 68, 148, 0.2);
+  font-weight: 600;
+  min-height: 50px;
+}
+
+.forgot-password {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.forgot-password a {
+  color: #c5d0ff;
+  opacity: 0.95;
+}
+
+.forgot-password a:hover {
+  color: white;
+}
+
+.social-section {
+  margin-top: 1.8rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.social-links {
+  display: inline-flex;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.social-links a {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: white;
+  color: #2f3461;
+  font-weight: 700;
+}
+
+.social-section .copyright {
+  color: #9aa0c1;
+}
+
+.main-screen {
+  padding: 1rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-shell {
+  width: min(100%, 1400px);
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: nowrap;
+}
+
+.dashboard-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.dashboard-brand h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.dashboard-brand p,
+.user-box span {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.user-box {
+  text-align: right;
+  min-width: auto;
+  white-space: nowrap;
+}
+
+.user-name {
+  display: block;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 0.9rem;
+}
+
+.user-faculty {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.brand-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 22px 55px rgba(33, 44, 118, 0.08);
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.status-bar span:first-child {
+  font-weight: 700;
+}
+
+.mood-icons {
+  font-size: 1.3rem;
+}
+
+.dashboard-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+.dashboard-nav a {
+  padding: 0.65rem 0.9rem;
+  border-radius: 14px;
+  background: rgba(82, 96, 255, 0.12);
+  color: #232a63;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex: 1;
+  text-align: center;
+  min-width: 0;
+}
+
+.dashboard-nav a.active {
+  background: linear-gradient(135deg, #4e50ff, #2f32b5);
+  color: white;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-card,
+.cards-panel,
+.tasks-card {
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 26px 70px rgba(42, 54, 138, 0.08);
+}
+
+.calendar-card {
+  padding: 1.2rem;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.calendar-header p,
+.calendar-header span {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.calendar-panel {
+  padding: 0.8rem;
+  background: linear-gradient(180deg, #2a2f8f 0%, #1f255a 100%);
+  border-radius: 22px;
+}
+
+.calendar-weekdays,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.calendar-weekdays {
+  margin-bottom: 0.7rem;
+}
+
+.calendar-weekdays div {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.75rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.calendar-day {
+  min-height: 75px;
+  padding: 0.6rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+}
+
+.calendar-day span {
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 0.85rem;
+}
+
+.calendar-day.inactive {
+  opacity: 0.32;
+}
+
+.event {
+  border-radius: 12px;
+  padding: 0.4rem 0.55rem;
+  font-size: 0.7rem;
+  line-height: 1.1;
+  max-width: 100%;
+  font-weight: 500;
+}
+
+.event-blue {
+  background: rgba(102, 127, 255, 0.2);
+  color: #d7e0ff;
+}
+
+.event-purple {
+  background: rgba(181, 152, 255, 0.22);
+  color: #f5e8ff;
+}
+
+.event-yellow {
+  background: rgba(255, 213, 92, 0.18);
+  color: #fff7d0;
+}
+
+.cards-panel {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.75rem;
+  padding: 1.2rem;
+}
+
+.info-card {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 1rem 1.1rem;
+  color: var(--text);
+  min-height: 90px;
+}
+
+.info-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.info-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.tasks-card {
+  padding: 1.2rem;
+}
+
+.tasks-card-header {
+  margin-bottom: 0.8rem;
+}
+
+.tasks-card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.dashboard-form .form-label {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.dashboard-form .form-control {
+  border-radius: 14px;
+  border: 1px solid #d7def8;
+  background: #fafbff;
+  font-size: 0.9rem;
+  min-height: 40px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tasks-entry-grid {
+  width: 100%;
+}
+
+.tasks-entry-grid .row {
+  align-items: end;
+}
+
+.tasks-entry-grid .form-control {
+  min-height: 42px;
+}
+
+.tasks-entry-grid .btn-submit {
+  min-height: 42px;
+  font-size: 0.9rem;
+}
+
+.btn-submit {
+  min-height: 42px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.table {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.table th {
+  color: #6a7095;
+  font-weight: 700;
+  border-bottom: 1px solid #e9eef7;
+  padding: 0.7rem;
+  font-size: 0.85rem;
+}
+
+.table td {
+  color: #2c315f;
+  padding: 0.7rem;
+}
+
+.btn-warning,
+.btn-danger {
+  border-radius: 12px;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.65rem;
+}
+
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-panel {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header,
+  .status-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .calendar-weekdays,
+  .calendar-days {
+    gap: 0.6rem;
+  }
+}
